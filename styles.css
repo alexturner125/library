@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    font-family: Helvetica;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    grid-template-rows: 80px 1fr;
+    height: 100vh;
+}
+
+input,
+button {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input[type="search" i]::-webkit-search-cancel-button {
+    appearance: none;
+}
+
+.page-header {
+    grid-area: 1 / 2 / 2 / 3;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem 0 2rem;
+    box-shadow: #aeb6bf 0 5px 5px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+#book_search {
+    flex: 1;
+    appearance: none;
+    height: 2rem;
+    background-color: white;
+    font-family: inherit;
+    font-size: 16px;
+    border: 1px solid #346250;
+    padding: 0 0.75rem;
+    margin: 0;
+    outline: none;
+}
+
+#book_search:focus {
+    border: 2px solid #346250;
+}
+
+.search-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 2rem;
+    background-color: #346250;
+    border: none;
+}
+
+.search-btn img {
+    width: 1.2rem;
+}
+
+.account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account img {
+    height: 2rem;
+}
+
+.sidebar {
+    grid-area: 1 / 1 / 3 / 2;
+    position: relative;
+    background-color: #346250;
+    color: white;
+    padding: 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 24px;
+    margin-bottom: 3.5rem;
+}
+
+#books {
+    width: 2rem;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0;
+
+}
+
+.sidebar li img {
+    width: 1.2rem;
+}
+
+.content {
+    grid-area: 2 / 2 / 3 / 3;
+    overflow: auto;
+    background-color: #d6dbdf;
+}
