@@ -7,7 +7,7 @@ function Book(title, author, pageCount, genre, readStatus, favorite) {
     this.genre = genre;
     this.readStatus = (readStatus.checked) ? readStatus.value : null;
     this.favorite = (favorite.checked) ? favorite.value : null;
-    this.id = crypto.randomUUID();
+    this.bookId = crypto.randomUUID();
 }
 
 const books = document.querySelector(".books");
@@ -29,6 +29,9 @@ const cancel = document.querySelector("#cancel");
 function genLibrary() {
     myLibrary.forEach((item) => {
         const book = document.createElement("div");
+        const modifyBook = document.createElement("div");
+        const editInfo = document.createElement("img");
+        const deleteBook = document.createElement("img");
         const bookInfo = document.createElement("div");
         const title = document.createElement("p");
         const author = document.createElement("p");
@@ -39,6 +42,10 @@ function genLibrary() {
         const inProgress = document.createElement("img");
 
         book.classList.add("book");
+        book.setAttribute("id", item.bookId);
+        modifyBook.classList.add("modify-book");
+        editInfo.setAttribute("id", "edit");
+        deleteBook.setAttribute("id", "delete");
         bookInfo.classList.add("book-info");
         title.classList.add("title");
         author.classList.add("author");
@@ -48,9 +55,15 @@ function genLibrary() {
         eye.setAttribute("id", "read-status");
         inProgress.setAttribute("id", "in-progress");
 
+        editInfo.src = "images/pencil.svg";
+        deleteBook.src = "images/delete.svg";
+
         title.textContent = item.title;
         author.textContent = `by ${item.author}`;
         pages.textContent = `${item.pageCount} pages`;
+
+        modifyBook.appendChild(editInfo);
+        modifyBook.appendChild(deleteBook);
 
         bookInfo.appendChild(title);
         bookInfo.appendChild(author);
@@ -60,6 +73,7 @@ function genLibrary() {
         options.appendChild(eye);
         options.appendChild(inProgress);
 
+        book.appendChild(modifyBook);
         book.appendChild(bookInfo);
         book.appendChild(options);
 
@@ -76,6 +90,54 @@ function genLibrary() {
         } else {
             eye.src = "images/eye-plus-outline.svg";
         }
+
+        deleteBook.addEventListener("click", (e) => {
+            const parentBook = e.target.closest(".book");
+            const thisBookId = parentBook.getAttribute("id");
+
+            for (let i = 1; i <= myLibrary.length; i++) {
+                if (myLibrary[i - 1].bookId === thisBookId) {
+                    myLibrary.splice((i - 1), 1);
+                }   
+            }
+
+            books.removeChild(parentBook);
+        });
+
+        eye.addEventListener("click", (e) => {
+            const parentBook = e.target.closest(".book");
+            const thisBookId = parentBook.getAttribute("id");
+
+            for (let i = 1; i <= myLibrary.length; i++) {
+                if (myLibrary[i - 1].bookId === thisBookId) {
+                    if (myLibrary[i - 1].readStatus === "read") {
+                        myLibrary[i - 1].readStatus = null;
+                        e.target.src = "images/eye-plus-outline.svg";
+                    } else {
+                        myLibrary[i - 1].readStatus = "read";
+                        e.target.src = "images/eye-check.svg";
+                    }
+                }
+            }
+        });
+
+        star.addEventListener("click", (e) => {
+            const parentBook = e.target.closest(".book");
+            const thisBookId = parentBook.getAttribute("id");
+
+            for (let i = 1; i <= myLibrary.length; i++) {
+                if (myLibrary[i - 1].bookId === thisBookId) {
+                    if (myLibrary[i - 1].favorite === "favorite") {
+                        myLibrary[i - 1].favorite = null;
+                        e.target.src = "images/star-plus-outline.svg";
+                    } else {
+                        myLibrary[i - 1].favorite = "favorite";
+                        e.target.src = "images/star.svg";
+                    }
+                }
+            }
+        });
+
     });
 }
 
@@ -103,4 +165,5 @@ cancel.addEventListener("click", () => {
     dialog.close();
     form.reset();
 });
+
 

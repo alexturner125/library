@@ -169,6 +169,25 @@ input[type="search" i]::-webkit-search-cancel-button {
     /* box-shadow: #aeb6bf 5px 5px 5px; */
 }
 
+.book:hover {
+    background-color: white;
+}
+
+.modify-book {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modify-book img {
+    width: 1.2rem;
+}
+
+.modify-book img:hover{
+    cursor: pointer;
+}
+
 .book-info {
     flex: 1;
     display: flex;
