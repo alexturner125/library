@@ -31,9 +31,9 @@
                     <p class="pages">300 pages</p>
                 </div>
                 <div class="options">
-                    <div class="star"><img src="images/star.svg"></div>
-                    <div class="read-status"><img src="images/eye-check.svg"></div>
-                    <div class="in-progress"><img src="images/plus-box-outline.svg"></div>
+                    <img id="star" src="images/star.svg">
+                    <img id="read-status" src="images/eye-check.svg">
+                    <img id="in-progress" src="images/plus-box-outline.svg">
                 </div>
             </div>
             <div class="book">
@@ -43,139 +43,81 @@
                     <p class="pages">1178 pages</p>
                 </div>
                 <div class="options">
-                    <div class="star"><img src="images/star-plus-outline.svg"></div>
-                    <div class="read-status"><img src="images/eye-plus-outline.svg"></div>
-                    <div class="in-progress"><img src="images/plus-box.svg"></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-info">
-                    <p class="title">The Hobbit</p>
-                    <p class="author">by J.R.R. Tolkien</p>
-                    <p class="pages">300 pages</p>
-                </div>
-                <div class="options">
-                    <div class="star"><img src="images/star.svg"></div>
-                    <div class="read-status"><img src="images/eye-check.svg"></div>
-                    <div class="in-progress"><img src="images/plus-box-outline.svg"></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-info">
-                    <p class="title">The Hobbit</p>
-                    <p class="author">by J.R.R. Tolkien</p>
-                    <p class="pages">300 pages</p>
-                </div>
-                <div class="options">
-                    <div class="star"><img src="images/star.svg"></div>
-                    <div class="read-status"><img src="images/eye-check.svg"></div>
-                    <div class="in-progress"><img src="images/plus-box-outline.svg"></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-info">
-                    <p class="title">The Hobbit</p>
-                    <p class="author">by J.R.R. Tolkien</p>
-                    <p class="pages">300 pages</p>
-                </div>
-                <div class="options">
-                    <div class="star"><img src="images/star.svg"></div>
-                    <div class="read-status"><img src="images/eye-check.svg"></div>
-                    <div class="in-progress"><img src="images/plus-box-outline.svg"></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-info">
-                    <p class="title">The Hobbit</p>
-                    <p class="author">by J.R.R. Tolkien</p>
-                    <p class="pages">300 pages</p>
-                </div>
-                <div class="options">
-                    <div class="star"><img src="images/star.svg"></div>
-                    <div class="read-status"><img src="images/eye-check.svg"></div>
-                    <div class="in-progress"><img src="images/plus-box-outline.svg"></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-info">
-                    <p class="title">The Hobbit</p>
-                    <p class="author">by J.R.R. Tolkien</p>
-                    <p class="pages">300 pages</p>
-                </div>
-                <div class="options">
-                    <div class="star"><img src="images/star.svg"></div>
-                    <div class="read-status"><img src="images/eye-check.svg"></div>
-                    <div class="in-progress"><img src="images/plus-box-outline.svg"></div>
+                    <img id="star" src="images/star.svg">
+                    <img id="read-status" src="images/eye-check.svg">
+                    <img id="in-progress" src="images/plus-box-outline.svg">
                 </div>
             </div>
 
         </div>
     </div>
-    <dialog open>
-        <div class="header">Add a Book:</div>
-        <div class="column left">
-            <div class="input-group">
-                <label for="book_title">BOOK TITLE</label>
-                <input type="text" id="book_title" name="book_title">
+    <dialog>
+        <form id="new-book">
+            <div class="header">Add a Book:</div>
+            <div class="column left">
+                <div class="input-group">
+                    <label for="book_title">BOOK TITLE</label>
+                    <input type="text" id="book_title" name="book_title">
+                </div>
+                <div class="input-group">
+                    <label for="author">AUTHOR</label>
+                    <input type="text" id="author" name="author">
+                </div>
+                <div class="input-group">
+                    <label for="page_count">NUMBER OF PAGES</label>
+                    <input type="text" id="page_count" name="page_count">
+                </div>
             </div>
-            <div class="input-group">
-                <label for="author">AUTHOR</label>
-                <input type="text" id="author" name="author">
+            <div class="column right">
+                <div class="input-group">
+                    <label for="genre">GENRE</label>
+                    <select id="genre" name="genre">
+                            <option selected>Select Genre...</option>
+                        <optgroup label="Fiction">
+                            <option value="fantasy">Fantasy</option>
+                            <option value="sci-fi">Science Fiction</option>
+                            <option value="dystopian">Dystopian</option>
+                            <option value="action-adventure">Action & Adventure</option>
+                            <option value="mystery">Mystery</option>
+                            <option value="horror">Horror</option>
+                            <option value="historical-fiction">Historical Fiction</option>
+                            <option value="romance">Romance</option>
+                            <option value="contemporary-fiction">Contemporary Fiction</option>
+                            <option value="children">Children</option>
+                        </optgroup>
+                        <optgroup label="Non-Fiction">
+                            <option value="biography">Biography</option>
+                            <option value="food-and-drink">Food & Drink</option>
+                            <option value="art">Art</option>
+                            <option value="self-help">Self-help</option>
+                            <option value="history">History</option>
+                            <option value="travel">Travel</option>
+                            <option value="true-crime">True Crime</option>
+                            <option value="humor">Humor</option>
+                            <option value="essays">Essays</option>
+                            <option value="diy">DIY</option>
+                            <option value="religion-and-spirituality">Religion & Spirituality</option>
+                            <option value="social-sciences">Fantasy</option>
+                            <option value="family-dynamics">Family Dynamics</option>
+                            <option value="science-and-technology">Science & Technology</option>
+                        </optgroup>
+                            <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="mark_read" name="mark_read" value="read">
+                    <label for="mark_read">MARK AS READ</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="add_favorite" name="add_favorite" value="favorite">
+                    <label for="add_favorite">ADD TO FAVORITES</label>
+                </div>           
             </div>
-            <div class="input-group">
-                <label for="page_count">NUMBER OF PAGES</label>
-                <input type="text" id="page_count" name="page_count">
+            <div class="buttons">
+                <button type="button" id="create-book">Add Book</button>
+                <button type="button" id="cancel">Cancel</button>
             </div>
-        </div>
-        <div class="column right">
-            <div class="input-group">
-                <label for="genre">GENRE</label>
-                <select id="genre" name="genre">
-                        <option selected>Select Genre...</option>
-                    <optgroup label="Fiction">
-                        <option value="fantasy">Fantasy</option>
-                        <option value="sci-fi">Science Fiction</option>
-                        <option value="dystopian">Dystopian</option>
-                        <option value="action-adventure">Action & Adventure</option>
-                        <option value="mystery">Mystery</option>
-                        <option value="horror">Horror</option>
-                        <option value="historical-fiction">Historical Fiction</option>
-                        <option value="romance">Romance</option>
-                        <option value="contemporary-fiction">Contemporary Fiction</option>
-                        <option value="children">Children</option>
-                    </optgroup>
-                    <optgroup label="Non-Fiction">
-                        <option value="biography">Biography</option>
-                        <option value="food-and-drink">Food & Drink</option>
-                        <option value="art">Art</option>
-                        <option value="self-help">Self-help</option>
-                        <option value="history">History</option>
-                        <option value="travel">Travel</option>
-                        <option value="true-crime">True Crime</option>
-                        <option value="humor">Humor</option>
-                        <option value="essays">Essays</option>
-                        <option value="diy">DIY</option>
-                        <option value="religion-and-spirituality">Religion & Spirituality</option>
-                        <option value="social-sciences">Fantasy</option>
-                        <option value="family-dynamics">Family Dynamics</option>
-                        <option value="science-and-technology">Science & Technology</option>
-                    </optgroup>
-                        <option value="other">Other</option>
-                </select>
-            </div>
-            <div class="checkbox-group">
-                <input type="checkbox" id="mark-read" name="mark-read" value="true">
-                <label for="mark-read">MARK AS READ</label>
-            </div>
-            <div class="checkbox-group">
-                <input type="checkbox" id="add-favorite" name="add-favorite" value="true">
-                <label for="add-favorite">ADD TO FAVORITES</label>
-            </div>           
-        </div>
-        <div class="buttons">
-            <button id="create-book">Add Book</button>
-            <button id="cancel">Cancel</button>
-        </div>
+        </form>
     </dialog>
 </body>
 </html>

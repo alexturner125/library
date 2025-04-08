@@ -209,15 +209,19 @@ input[type="search" i]::-webkit-search-cancel-button {
 }
 
 dialog {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
     height: 600px;
     aspect-ratio: 2 / 1.5;
     padding: 2rem 1.5rem;
     border: 5px solid #346250;
     margin: auto;
     margin-top: calc(50vh - 300px);
+}
+
+#new-book {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    height: 100%;
 }
 
 .header {
